@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </body>
+    <script>
+        var boxes = document.getElementsByClassName('box');
+        for (var i = 0; i < boxes.length; i++) {
+            boxes[i].style.width = '100px';
+            boxes[i].style.height = '100px';
+            boxes[i].style.backgroundColor = 'green';
+            boxes[i].style.position = 'absolute';
+            boxes[i].style.top = '100px';
+            boxes[i].style.left = 120 * i + 'px';
+            boxes[i].style.transition = 'all 1s';
+            boxes[i].style.transform = 'rotate(0deg)';
+        }
+        var deg = 0;
+        setInterval(function () {
+            deg += 10;
+            for (var i = 0; i < boxes.length; i++) {
+                boxes[i].style.transform = 'rotate(' + deg + 'deg)';
+            }
+        }, 1000);
+    </script>
+</html>
